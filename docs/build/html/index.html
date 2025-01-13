@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>IMDB Review Analysis &#8212; IMDB Review Analysis 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue data-md-color-accent=light-blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#index" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="#" title="IMDB Review Analysis 1.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Gitla Documentation</span>
+          <span class="md-header-nav__topic"> IMDB Review Analysis </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "versions.json",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="#" class="md-tabs__link">IMDB Review Analysis 1.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="#" title="IMDB Review Analysis 1.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="#"
+       title="IMDB Review Analysis 1.0 documentation">Gitla Documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#index--page-root" class="md-nav__link">IMDB Review Analysis</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#dataset-loading-and-initial-exploration" class="md-nav__link">1. Dataset Loading and Initial Exploration</a>
+        </li>
+        <li class="md-nav__item"><a href="#text-preprocessing-and-feature-engineering" class="md-nav__link">2. Text Preprocessing and Feature Engineering</a>
+        </li>
+        <li class="md-nav__item"><a href="#vectorization-techniques" class="md-nav__link">3. Vectorization Techniques</a>
+        </li>
+        <li class="md-nav__item"><a href="#model-evaluation" class="md-nav__link">4. Model Evaluation</a>
+        </li>
+        <li class="md-nav__item"><a href="#classification-with-machine-learning-models" class="md-nav__link">5. Classification with Machine Learning Models</a>
+        </li>
+        <li class="md-nav__item"><a href="#hyperparameter-tuning-and-final-evaluation" class="md-nav__link">6. Hyperparameter Tuning and Final Evaluation</a>
+        </li>
+        <li class="md-nav__item"><a href="#conclusion" class="md-nav__link">7. Conclusion</a>
+        </li>
+        <li class="md-nav__item"><a href="#appendix" class="md-nav__link">Appendix</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/index.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="imdb-review-analysis">
+<span id="imdb-review-analysis-documentation"></span><h1 id="index--page-root">IMDB Review Analysis<a class="headerlink" href="#index--page-root" title="Link to this heading">¶</a></h1>
+<p>This project is a sentiment analysis task where the goal is to classify movie reviews from the IMDB dataset into two categories: positive and negative. The notebook utilizes multiple Natural Language Processing (NLP) techniques and machine learning models to preprocess the text, analyze the reviews, and evaluate various vectorization methods and classifiers.</p>
+<section id="dataset-loading-and-initial-exploration">
+<h2 id="dataset-loading-and-initial-exploration">1. Dataset Loading and Initial Exploration<a class="headerlink" href="#dataset-loading-and-initial-exploration" title="Link to this heading">¶</a></h2>
+<p>The dataset used for this analysis is the “IMDB Dataset of 50k Movie Reviews” sourced from Kaggle. The data consists of 50,000 movie reviews labeled as either positive or negative. The following steps outline the dataset loading and initial exploration process:</p>
+<ul class="simple">
+<li><p><strong>Dataset Download</strong>: The dataset is downloaded from Kaggle and extracted into a directory named ‘datasets’.</p></li>
+<li><p><strong>Initial Data Load</strong>: The dataset is loaded into a Pandas DataFrame.</p></li>
+<li><p><strong>Basic Exploration</strong>: The basic structure of the data is explored, including checking the unique sentiment labels (positive, negative).</p></li>
+<li><p><strong>Profiling</strong>: A detailed profile of the dataset is generated using the <cite>ydata_profiling</cite> library to provide insights into the data distribution and missing values.</p></li>
+</ul>
+</section>
+<section id="text-preprocessing-and-feature-engineering">
+<h2 id="text-preprocessing-and-feature-engineering">2. Text Preprocessing and Feature Engineering<a class="headerlink" href="#text-preprocessing-and-feature-engineering" title="Link to this heading">¶</a></h2>
+<p>In this section, text reviews are cleaned and preprocessed for modeling. The following steps are involved:</p>
+<ul class="simple">
+<li><p><strong>Word Count Calculation</strong>: A new feature for the number of words in each review is created.</p></li>
+<li><p><strong>Sentiment Encoding</strong>: Sentiment labels (positive/negative) are encoded as binary values (1 for positive, 0 for negative).</p></li>
+<li><p><strong>Text Cleaning</strong>: The reviews are cleaned by removing URLs, HTML tags, and non-alphanumeric characters. All text is converted to lowercase.</p></li>
+<li><p><strong>Tokenization and Stemming</strong>: The reviews are tokenized and stemmed using the Snowball Stemmer from the NLTK library to reduce words to their base forms.</p></li>
+<li><p><strong>Stopword Removal</strong>: Common English stopwords (e.g., “the”, “and”) are removed to reduce noise in the data.</p></li>
+</ul>
+</section>
+<section id="vectorization-techniques">
+<h2 id="vectorization-techniques">3. Vectorization Techniques<a class="headerlink" href="#vectorization-techniques" title="Link to this heading">¶</a></h2>
+<p>Various vectorization techniques are evaluated to convert the text data into numerical features that can be used by machine learning models. The following methods are used:</p>
+<ul class="simple">
+<li><p><strong>CountVectorizer</strong>: Converts the text data into a matrix of token counts.</p></li>
+<li><p><strong>TfidfVectorizer</strong>: Converts the text into a Term Frequency-Inverse Document Frequency (TF-IDF) representation, which reflects the importance of a word in the document relative to the entire corpus.</p></li>
+<li><p><strong>HashingVectorizer</strong>: A variant of CountVectorizer that uses the hash trick to represent text data as a fixed-length feature vector.</p></li>
+</ul>
+<p>These vectorizers are evaluated based on their performance in subsequent models, such as accuracy, training time, and confusion matrix.</p>
+</section>
+<section id="model-evaluation">
+<h2 id="model-evaluation">4. Model Evaluation<a class="headerlink" href="#model-evaluation" title="Link to this heading">¶</a></h2>
+<p>In this section, multiple models are trained and evaluated using the different vectorization techniques. The following steps are carried out:</p>
+<ul class="simple">
+<li><p><strong>Logistic Regression</strong>: A logistic regression model is trained on the vectorized data to predict the sentiment of the reviews.</p></li>
+<li><p><strong>Confusion Matrix</strong>: For each vectorizer, a confusion matrix is generated to visualize the model’s performance in classifying reviews correctly and incorrectly.</p></li>
+<li><p><strong>Word2Vec and FastText</strong>: Additional models are trained using Word2Vec and FastText embeddings, which are word representation models that capture semantic meaning based on word context. These models are evaluated similarly to the traditional vectorization methods.</p></li>
+<li><p><strong>Performance Evaluation</strong>: Each model’s performance is assessed using metrics like accuracy, Mean Squared Error (MSE), and classification reports.</p></li>
+</ul>
+</section>
+<section id="classification-with-machine-learning-models">
+<h2 id="classification-with-machine-learning-models">5. Classification with Machine Learning Models<a class="headerlink" href="#classification-with-machine-learning-models" title="Link to this heading">¶</a></h2>
+<p>Several classification algorithms are tested to identify the best model for sentiment analysis. The following classifiers are evaluated:</p>
+<ul class="simple">
+<li><p><strong>Logistic Regression</strong>: A widely used linear model for binary classification.</p></li>
+<li><p><strong>Multinomial Naive Bayes</strong>: A probabilistic classifier based on Bayes’ theorem.</p></li>
+<li><p><strong>Linear Support Vector Classifier (SVC)</strong>: A linear SVM model for classification tasks.</p></li>
+<li><p><strong>Random Forest</strong>: A powerful ensemble method based on decision trees.</p></li>
+<li><p><strong>Gradient Boosting</strong>: Another ensemble method that builds models sequentially, with each new model correcting the errors of the previous one.</p></li>
+</ul>
+<p>For each classifier, the following steps are conducted:</p>
+<ul class="simple">
+<li><p><strong>Pipeline Construction</strong>: A pipeline is created using the <cite>TfidfVectorizer</cite> for feature extraction and the chosen classifier for prediction.</p></li>
+<li><p><strong>Model Fitting and Prediction</strong>: The models are trained and used to predict the sentiment of movie reviews.</p></li>
+<li><p><strong>Performance Metrics</strong>: Each model’s accuracy, AUC (Area Under Curve), and confusion matrix are computed. The classification report is generated for detailed performance analysis.</p></li>
+</ul>
+</section>
+<section id="hyperparameter-tuning-and-final-evaluation">
+<h2 id="hyperparameter-tuning-and-final-evaluation">6. Hyperparameter Tuning and Final Evaluation<a class="headerlink" href="#hyperparameter-tuning-and-final-evaluation" title="Link to this heading">¶</a></h2>
+<p>Once the classifiers are trained, hyperparameter tuning is performed to optimize model performance. The following steps are carried out:</p>
+<ul class="simple">
+<li><p><strong>GridSearchCV</strong>: Grid search is used to tune hyperparameters for <cite>LogisticRegression</cite> and <cite>RandomForestClassifier</cite>. This helps in finding the best combination of hyperparameters for each model.</p></li>
+<li><p><strong>Best Parameters</strong>: The best hyperparameters for each model are identified, and the tuned models are evaluated again.</p></li>
+<li><p><strong>Model Comparison</strong>: A final comparison is made between pre-tuned and post-tuned classifiers based on their accuracy.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2 id="conclusion">7. Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<p>After evaluating different vectorization techniques and classifiers, the following insights are derived:</p>
+<ul class="simple">
+<li><p><strong>Best Performing Models</strong>: Logistic Regression and Linear SVC show the highest accuracy, both achieving over 87% accuracy in sentiment classification tasks.</p></li>
+<li><p><strong>Tuning Impact</strong>: Hyperparameter tuning improves the performance of classifiers like Logistic Regression and Random Forest, leading to better results.</p></li>
+<li><p><strong>Model Recommendation</strong>: Based on accuracy, computational efficiency, and interpretability, Logistic Regression is recommended as the best model for this sentiment analysis task.</p></li>
+<li><p><strong>Future Improvements</strong>: The project can be extended by incorporating deep learning-based models or exploring more advanced text preprocessing techniques to improve accuracy further.</p></li>
+</ul>
+</section>
+<section id="appendix">
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Dependencies</strong>: The following libraries and tools are required to run the notebook:
+- Pandas.
+- Numpy.
+- NLTK.
+- Scikit-learn
+- Word2Vec (Gensim)
+- FastText (Gensim)
+- Matplotlib, Seaborn (for visualization)
+- Kaggle API (for downloading the dataset)</p></li>
+<li><p><strong>File Structure</strong>:
+- <cite>datasets/</cite>: Directory where the IMDB dataset is stored.
+- <cite>analysis.html</cite>: Generated profiling report of the dataset.
+- <cite>results/</cite>: Directory where model evaluation results are saved.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2025,  Rishipreeth.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
